@@ -1,0 +1,41 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@goddo/core@*": "0.1.0",
+    "jsr:@goddo/core@0.1": "0.1.0",
+    "jsr:@goddo/html@*": "0.1.0",
+    "jsr:@goddo/llms-txt@*": "0.1.0",
+    "jsr:@goddo/openapi@*": "0.1.0"
+  },
+  "jsr": {
+    "@goddo/core@0.1.0": {
+      "integrity": "a7b810869c0abfc2d59fada6f6e6eb26aa8c4ea915f83de113be4e8f9c03b42b"
+    },
+    "@goddo/html@0.1.0": {
+      "integrity": "bf139a3975a76bb6ba8c35849d0730b4750bdaa75e1eca413234c05340f48a07",
+      "dependencies": [
+        "jsr:@goddo/core@0.1"
+      ]
+    },
+    "@goddo/llms-txt@0.1.0": {
+      "integrity": "f76822018876fa2ef4ab81c5e33a8a16c7b884dc5eb0515e488b69f90d9dd685",
+      "dependencies": [
+        "jsr:@goddo/core@0.1"
+      ]
+    },
+    "@goddo/openapi@0.1.0": {
+      "integrity": "be8f1fe90fc211c8fd06a75e4516380dd6b24b1511f0081f33576e6655358189",
+      "dependencies": [
+        "jsr:@goddo/core@0.1"
+      ]
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@goddo/core@*",
+      "jsr:@goddo/html@*",
+      "jsr:@goddo/llms-txt@*",
+      "jsr:@goddo/openapi@*"
+    ]
+  }
+}
