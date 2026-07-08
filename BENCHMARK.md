@@ -23,15 +23,15 @@ deno bench benchmarks/
 
 ### Performance Results (Local Workspace / Deno 2.9.0 / Apple M1)
 
-| Benchmark                              | Time/iter (avg) | Iter/s  | (min … max)          | p75    | p99     | p995    |
-| -------------------------------------- | --------------- | ------- | -------------------- | ------ | ------- | ------- |
-| **GET /** (Redirect)                   | 1.7 µs          | 592,800 | ( 1.2 µs … 2.1 ms)   | 1.5 µs | 2.3 µs  | 3.0 µs  |
-| **GET /page** (HTML rendering)         | 7.6 µs          | 130,900 | ( 6.4 µs … 725.8 µs) | 7.5 µs | 12.9 µs | 17.9 µs |
-| **GET /todos/** (List todos)           | 1.9 µs          | 527,700 | ( 1.8 µs … 2.0 µs)   | 1.9 µs | 2.0 µs  | 2.0 µs  |
-| **GET /todos/1** (Get a specific todo) | 2.2 µs          | 455,900 | ( 2.1 µs … 2.5 µs)   | 2.2 µs | 2.5 µs  | 2.5 µs  |
-| **POST /todos/** (Create todo)         | 3.3 µs          | 302,100 | ( 3.2 µs … 3.9 µs)   | 3.3 µs | 3.9 µs  | 3.9 µs  |
-| **PUT /todos/1** (Update todo)         | 4.0 µs          | 247,900 | ( 3.9 µs … 4.5 µs)   | 4.1 µs | 4.5 µs  | 4.5 µs  |
-| **DELETE /todos/2** (Delete todo)      | 1.7 ms          | 600.1   | ( 1.6 ms … 3.8 ms)   | 1.7 ms | 2.4 ms  | 3.2 ms  |
+| Benchmark                              | Time/iter (avg) | Iter/s  | (min … max)           | p75    | p99     | p995    |
+| -------------------------------------- | --------------- | ------- | --------------------- | ------ | ------- | ------- |
+| **GET /** (Redirect)                   | 1.7 µs          | 599,200 | ( 1.2 µs … 2.3 ms)    | 1.4 µs | 2.4 µs  | 2.9 µs  |
+| **GET /page** (HTML rendering)         | 7.6 µs          | 130,900 | ( 6.4 µs … 725.2 µs)  | 7.5 µs | 13.3 µs | 19.1 µs |
+| **GET /todos/** (List todos)           | 1.9 µs          | 533,800 | ( 1.8 µs … 2.0 µs)    | 1.9 µs | 2.0 µs  | 2.0 µs  |
+| **GET /todos/1** (Get a specific todo) | 2.3 µs          | 442,600 | ( 2.2 µs … 2.6 µs)    | 2.3 µs | 2.6 µs  | 2.6 µs  |
+| **POST /todos/** (Create todo)         | 3.4 µs          | 292,300 | ( 3.2 µs … 4.2 µs)    | 3.4 µs | 4.2 µs  | 4.2 µs  |
+| **PUT /todos/1** (Update todo)         | 4.1 µs          | 246,200 | ( 3.9 µs … 4.4 µs)    | 4.1 µs | 4.4 µs  | 4.4 µs  |
+| **DELETE /todos/2** (Delete todo)      | 1.8 ms          | 556.5   | ( 1.6 ms … 5.2 ms)    | 1.7 ms | 4.7 ms  | 4.7 ms  |
 
 ### ElysiaJS Performance Results (Bun 1.1.43 / Apple M1)
 
