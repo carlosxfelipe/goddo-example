@@ -43,9 +43,12 @@ export const app = new Goddo()
       .get('/', () => todosArray(), {
         detail: { summary: 'List all todos', tags: ['Todos'] },
       })
-      .get('/:id', ({ params: { id } }) => {
+      .get('/:id', ({ params: { id }, set }) => {
         const todo = todos.get(id)
-        if (!todo) return new Response('Todo not found', { status: 404 })
+        if (!todo) {
+          set.status = 404
+          return { error: 'Todo not found' }
+        }
         return todo
       }, {
         params: t.Object({ id: t.Numeric() }),
@@ -59,9 +62,12 @@ export const app = new Goddo()
         body: t.Object({ title: t.String() }),
         detail: { summary: 'Create a new todo', tags: ['Todos'] },
       })
-      .put('/:id', ({ params: { id }, body }) => {
+      .patch('/:id', ({ params: { id }, body, set }) => {
         const todo = todos.get(id)
-        if (!todo) return new Response('Todo not found', { status: 404 })
+        if (!todo) {
+          set.status = 404
+          return { error: 'Todo not found' }
+        }
         if (body.title !== undefined) todo.title = body.title
         if (body.completed !== undefined) todo.completed = body.completed
         return todo
@@ -71,10 +77,13 @@ export const app = new Goddo()
           title: t.Optional(t.String()),
           completed: t.Optional(t.Boolean()),
         }),
-        detail: { summary: 'Update a todo', tags: ['Todos'] },
+        detail: { summary: 'Partially update a todo', tags: ['Todos'] },
       })
-      .delete('/:id', ({ params: { id } }) => {
-        if (!todos.has(id)) return new Response('Todo not found', { status: 404 })
+      .delete('/:id', ({ params: { id }, set }) => {
+        if (!todos.has(id)) {
+          set.status = 404
+          return { error: 'Todo not found' }
+        }
         todos.delete(id)
         return { success: true }
       }, {

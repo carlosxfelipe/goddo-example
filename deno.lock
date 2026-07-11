@@ -1,15 +1,15 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@goddo/core@*": "0.1.0",
-    "jsr:@goddo/core@0.1": "0.1.0",
+    "jsr:@goddo/core@*": "0.1.2",
+    "jsr:@goddo/core@0.1": "0.1.2",
     "jsr:@goddo/html@*": "0.1.0",
     "jsr:@goddo/llms-txt@*": "0.1.0",
     "jsr:@goddo/openapi@*": "0.1.0"
   },
   "jsr": {
-    "@goddo/core@0.1.0": {
-      "integrity": "a7b810869c0abfc2d59fada6f6e6eb26aa8c4ea915f83de113be4e8f9c03b42b"
+    "@goddo/core@0.1.2": {
+      "integrity": "59c9a21a2dd5c4e649f9da71819661939673c1ab959c8b5cb960590740f58ca7"
     },
     "@goddo/html@0.1.0": {
       "integrity": "bf139a3975a76bb6ba8c35849d0730b4750bdaa75e1eca413234c05340f48a07",
