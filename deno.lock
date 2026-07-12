@@ -12,10 +12,16 @@
       "integrity": "f154c6bea27c6d798242ab43daab3b7632c43c58c1fd2a1e77a35966cc124bdd"
     },
     "@goddo/html@0.1.1": {
-      "integrity": "69260f145896ec5205c5d916bd18f7865c511435e7f74de23733c1e8ac8c1646"
+      "integrity": "69260f145896ec5205c5d916bd18f7865c511435e7f74de23733c1e8ac8c1646",
+      "dependencies": [
+        "jsr:@goddo/core@~0.1.3"
+      ]
     },
     "@goddo/llms-txt@0.1.1": {
-      "integrity": "8397e1a5d18227b490189c0033c3b78675b6eb89fc14ae885389e2d361262791"
+      "integrity": "8397e1a5d18227b490189c0033c3b78675b6eb89fc14ae885389e2d361262791",
+      "dependencies": [
+        "jsr:@goddo/core@~0.1.3"
+      ]
     },
     "@goddo/openapi@0.1.1": {
       "integrity": "e90c566e86336504e0f7e6f73924ed3451fcf784508a1fbcce59773d935905c5",

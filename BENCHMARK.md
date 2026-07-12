@@ -9,17 +9,17 @@ To run the benchmarks, execute the following command:
 deno bench benchmarks/
 ```
 
-### Performance Results (JSR Package / Deno 2.9.0 / Apple M1)
+### Performance Results (JSR Package / Deno 2.9.2 / Apple M1)
 
-| Benchmark                              | Time/iter (avg) | Iter/s  | (min … max)        | p75    | p99     | p995    |
-| -------------------------------------- | --------------- | ------- | ------------------ | ------ | ------- | ------- |
-| **GET /** (Redirect)                   | 1.8 µs          | 569,200 | ( 1.2 µs … 2.5 ms) | 1.5 µs | 3.1 µs  | 5.0 µs  |
-| **GET /page** (HTML rendering)         | 7.8 µs          | 128,100 | ( 6.5 µs … 1.2 ms) | 7.6 µs | 13.0 µs | 17.2 µs |
-| **GET /todos/** (List todos)           | 1.9 µs          | 515,400 | ( 1.9 µs … 2.2 µs) | 1.9 µs | 2.2 µs  | 2.2 µs  |
-| **GET /todos/1** (Get a specific todo) | 2.3 µs          | 439,800 | ( 2.2 µs … 2.6 µs) | 2.3 µs | 2.6 µs  | 2.6 µs  |
-| **POST /todos/** (Create todo)         | 3.7 µs          | 273,200 | ( 3.5 µs … 4.1 µs) | 3.7 µs | 4.1 µs  | 4.1 µs  |
-| **PUT /todos/1** (Update todo)         | 4.1 µs          | 245,100 | ( 3.9 µs … 4.5 µs) | 4.1 µs | 4.5 µs  | 4.5 µs  |
-| **DELETE /todos/2** (Delete todo)      | 2.9 µs          | 339,800 | ( 2.9 µs … 3.1 µs) | 3.0 µs | 3.1 µs  | 3.1 µs  |
+| Benchmark                              | Time/iter (avg) | Iter/s  | (min … max)         | p75     | p99     | p995    |
+| -------------------------------------- | --------------- | ------- | ------------------- | ------- | ------- | ------- |
+| **GET /** (Redirect)                   | 1.9 µs          | 529,700 | ( 1.3 µs … 2.7 ms)  | 1.6 µs  | 3.5 µs  | 6.0 µs  |
+| **GET /page** (HTML rendering)         | 21.6 µs         | 46,200  | ( 17.0 µs … 9.4 ms) | 19.4 µs | 57.3 µs | 88.4 µs |
+| **GET /todos/** (List todos)           | 2.0 µs          | 499,000 | ( 1.9 µs … 2.3 µs)  | 2.0 µs  | 2.3 µs  | 2.3 µs  |
+| **GET /todos/1** (Get a specific todo) | 2.3 µs          | 431,000 | ( 2.2 µs … 2.7 µs)  | 2.3 µs  | 2.7 µs  | 2.7 µs  |
+| **POST /todos/** (Create todo)         | 3.9 µs          | 253,500 | ( 3.7 µs … 5.5 µs)  | 4.0 µs  | 5.5 µs  | 5.5 µs  |
+| **PATCH /todos/1** (Update todo)       | 4.3 µs          | 232,600 | ( 4.1 µs … 5.4 µs)  | 4.3 µs  | 5.4 µs  | 5.4 µs  |
+| **DELETE /todos/2** (Delete todo)      | 3.0 µs          | 327,900 | ( 2.9 µs … 3.7 µs)  | 3.1 µs  | 3.7 µs  | 3.7 µs  |
 
 ### ElysiaJS Performance Results (Bun 1.1.43 / Apple M1)
 
