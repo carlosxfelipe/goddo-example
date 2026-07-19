@@ -7,6 +7,27 @@ An example project to test the [Goddo](https://jsr.io/@goddo) framework packages
 You can find the original framework repository here:
 [carlosxfelipe/goddo](https://github.com/carlosxfelipe/goddo).
 
+## Requirements
+
+- [Deno](https://deno.land/) installed on your system.
+- [Deno extension](https://marketplace.visualstudio.com/items?itemName=denoland.vscode-deno) for VS
+  Code (recommended).
+
+### VS Code Setup
+
+If you use VS Code and have the **Prettier** extension installed, it may conflict with Deno's
+formatter. To use Deno's formatter automatically on save, add the following to your
+`.vscode/settings.json`:
+
+```json
+"[typescript]": {
+  "editor.defaultFormatter": "denoland.vscode-deno"
+},
+"[typescriptreact]": {
+  "editor.defaultFormatter": "denoland.vscode-deno"
+}
+```
+
 ## Running the project
 
 To run the development server:
@@ -15,33 +36,25 @@ To run the development server:
 deno task dev
 ```
 
-## Troubleshooting
+## Available Routes
 
-### "minimum dependency date" Error
+### UI
 
-If you encounter an error similar to this when running the project:
+- `GET /` - Redirects to `/page`
+- `GET /page` - HTML interface for the Todo app
 
-```text
-error: Could not find version of '@goddo/html' that matches specified version constraint '*'
+### API (JSON)
 
-A newer matching version was found, but it was not used because it was newer than the specified minimum dependency date of...
-```
+- `GET /todos` - List all todos
+- `GET /todos/:id` - Get a specific todo by ID
+- `POST /todos` - Create a new todo (expects `{"title": "..."}`)
+- `PATCH /todos/:id` - Update a todo (expects `{"title": "...", "completed": true}`)
+- `DELETE /todos/:id` - Delete a specific todo
 
-This occurs because Deno enforces a time restriction ("minimum dependency date") to prevent the
-immediate download of packages that were just published on JSR. This is a mechanism to ensure
-security and stability.
+### Documentation Plugins
 
-Since the Goddo packages are newly released, Deno might block their immediate installation.
-
-To bypass this restriction and force Deno to download the latest versions immediately, run the
-following command before starting the server:
-
-```bash
-deno cache --minimum-dependency-age 0 src/index.ts
-```
-
-After doing this, Deno's global cache will be successfully updated, and you can start the project
-normally using `deno task dev`.
+- `GET /docs` - Scalar API Reference for the API (via `@goddo/openapi`)
+- `GET /llms.txt` - LLM-friendly documentation (via `@goddo/llms-txt`)
 
 ## Benchmarks
 
