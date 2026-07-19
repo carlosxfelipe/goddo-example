@@ -48,10 +48,25 @@ normally using `deno task dev`.
 This project includes benchmarks to test the performance of the Goddo framework using Deno's
 built-in benchmarking tool.
 
-The benchmark results and analysis are documented in [BENCHMARK.md](./BENCHMARK.md).
-
 To run the benchmarks, execute the following command:
 
 ```bash
 deno bench benchmarks/
 ```
+
+### Results
+
+**Environment:**
+
+- CPU: Apple M1
+- Runtime: Deno 2.9.3 (stable, release, aarch64-apple-darwin)
+
+| benchmark                          | time/iter (avg) | iter/s  | (min … max)           | p75     | p99     | p995    |
+| ---------------------------------- | --------------- | ------- | --------------------- | ------- | ------- | ------- |
+| GET / (Redirect)                   | 1.7 µs          | 582,400 | ( 1.2 µs … 2.2 ms)    | 1.5 µs  | 3.2 µs  | 5.1 µs  |
+| GET /page (HTML rendering)         | 16.8 µs         | 59,630  | ( 14.6 µs … 632.9 µs) | 16.2 µs | 27.5 µs | 34.4 µs |
+| GET /todos/ (List todos)           | 1.9 µs          | 517,600 | ( 1.9 µs … 2.0 µs)    | 2.0 µs  | 2.0 µs  | 2.0 µs  |
+| GET /todos/1 (Get a specific todo) | 2.2 µs          | 464,900 | ( 2.1 µs … 2.5 µs)    | 2.2 µs  | 2.5 µs  | 2.5 µs  |
+| POST /todos/ (Create todo)         | 3.6 µs          | 279,800 | ( 3.5 µs … 4.1 µs)    | 3.6 µs  | 4.1 µs  | 4.1 µs  |
+| PATCH /todos/1 (Update todo)       | 3.7 µs          | 272,400 | ( 3.5 µs … 4.0 µs)    | 3.7 µs  | 4.0 µs  | 4.0 µs  |
+| DELETE /todos/2 (Delete todo)      | 2.8 µs          | 362,100 | ( 2.7 µs … 3.0 µs)    | 2.8 µs  | 3.0 µs  | 3.0 µs  |
