@@ -1,29 +1,32 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@goddo/core@*": "0.4.0",
-    "jsr:@goddo/core@0.2": "0.2.3",
-    "jsr:@goddo/html@*": "0.2.0",
-    "jsr:@goddo/llms-txt@*": "0.2.0",
-    "jsr:@goddo/openapi@*": "0.2.0"
+    "jsr:@goddo/core@*": "1.0.0",
+    "jsr:@goddo/core@1": "1.0.0",
+    "jsr:@goddo/html@*": "1.0.0",
+    "jsr:@goddo/llms-txt@*": "1.0.0",
+    "jsr:@goddo/openapi@*": "1.0.0"
   },
   "jsr": {
-    "@goddo/core@0.2.3": {
-      "integrity": "c2a0a681a0b1ff3ef4212ad8c69b8ebdf3e73eeccd5513b993067b9e2b6e7e97"
+    "@goddo/core@1.0.0": {
+      "integrity": "356d24cbc23ab06f5478487d5628b981b28ad7431059caac5322e06a67b16180"
     },
-    "@goddo/core@0.4.0": {
-      "integrity": "92be1e7d39513c1776f53ad3569696fb6441b9d4ab46c5f636866f4fb58bf4cc"
-    },
-    "@goddo/html@0.2.0": {
-      "integrity": "fe59a95ed7307634dd012647cda93d76fe9be0bba18c89bcdd92f7ce32b7a4d2"
-    },
-    "@goddo/llms-txt@0.2.0": {
-      "integrity": "ad02a8963d15c2f4ae94476e8bd239362bd4e1b58093046ec093e8d8a8cc809c"
-    },
-    "@goddo/openapi@0.2.0": {
-      "integrity": "a8c6f4e76a8226d85288dcd7d76acc293cafe09475e21f45b5f2620587b61eb0",
+    "@goddo/html@1.0.0": {
+      "integrity": "803c3f2bc7d27c1f84a9be04eab826297111a3161cbcc774bf16cc6e53dd3a84",
       "dependencies": [
-        "jsr:@goddo/core@0.2"
+        "jsr:@goddo/core@1"
+      ]
+    },
+    "@goddo/llms-txt@1.0.0": {
+      "integrity": "2f73bcc3c846cdfe8b04e3ca5da875f556f7c0f5c20d4fb1e85bb98b315472fc",
+      "dependencies": [
+        "jsr:@goddo/core@1"
+      ]
+    },
+    "@goddo/openapi@1.0.0": {
+      "integrity": "9582a3db10c6f6ff90d5a6fe5205ca194ad26f7e4fcb56e6c9eb557c40db6c5b",
+      "dependencies": [
+        "jsr:@goddo/core@1"
       ]
     }
   },

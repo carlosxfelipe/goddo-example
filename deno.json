@@ -6,6 +6,7 @@
     "lint": "deno lint",
     "bench": "deno bench --allow-net --allow-env"
   },
+  "minimumDependencyAge": 0,
   "imports": {
     "@goddo/core": "jsr:@goddo/core",
     "@goddo/html": "jsr:@goddo/html",
