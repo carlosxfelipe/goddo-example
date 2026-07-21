@@ -64,7 +64,7 @@ built-in benchmarking tool.
 To run the benchmarks, execute the following command:
 
 ```bash
-deno bench benchmarks/
+deno task bench
 ```
 
 ### Results
@@ -73,6 +73,20 @@ deno bench benchmarks/
 
 - CPU: Apple M1
 - Runtime: Deno 2.9.3 (stable, release, aarch64-apple-darwin)
+
+#### With SQLite (current)
+
+| benchmark                          | time/iter (avg) | iter/s  | (min … max)           | p75     | p99     | p995     |
+| ---------------------------------- | --------------- | ------- | --------------------- | ------- | ------- | -------- |
+| GET / (Redirect)                   | 1.5 µs          | 659,600 | ( 1.0 µs … 2.3 ms)    | 1.2 µs  | 2.6 µs  | 4.3 µs   |
+| GET /page (HTML rendering)         | 25.7 µs         | 38,850  | ( 21.1 µs … 580.4 µs) | 25.8 µs | 43.8 µs | 61.6 µs  |
+| GET /todos/ (List todos)           | 5.7 µs          | 173,900 | ( 5.5 µs … 8.7 µs)    | 5.6 µs  | 8.7 µs  | 8.7 µs   |
+| GET /todos/1 (Get a specific todo) | 4.6 µs          | 217,200 | ( 4.3 µs … 5.7 µs)    | 4.5 µs  | 5.7 µs  | 5.7 µs   |
+| POST /todos/ (Create todo)         | 32.0 µs         | 31,220  | ( 21.9 µs … 9.4 ms)   | 25.4 µs | 34.3 µs | 40.5 µs  |
+| PATCH /todos/1 (Update todo)       | 11.1 µs         | 89,690  | ( 10.1 µs … 1.0 ms)   | 11.0 µs | 13.7 µs | 17.1 µs  |
+| DELETE /todos/2 (Delete todo)      | 50.3 µs         | 19,890  | ( 40.4 µs … 1.7 ms)   | 44.2 µs | 58.0 µs | 930.5 µs |
+
+#### In-Memory Map (previous)
 
 | benchmark                          | time/iter (avg) | iter/s  | (min … max)           | p75     | p99     | p995    |
 | ---------------------------------- | --------------- | ------- | --------------------- | ------- | ------- | ------- |
@@ -83,3 +97,15 @@ deno bench benchmarks/
 | POST /todos/ (Create todo)         | 3.9 µs          | 256,500 | ( 3.8 µs … 4.6 µs)    | 3.9 µs  | 4.6 µs  | 4.6 µs  |
 | PATCH /todos/1 (Update todo)       | 3.9 µs          | 258,700 | ( 3.8 µs … 4.2 µs)    | 3.9 µs  | 4.2 µs  | 4.2 µs  |
 | DELETE /todos/2 (Delete todo)      | 2.9 µs          | 348,900 | ( 2.8 µs … 3.1 µs)    | 2.9 µs  | 3.1 µs  | 3.1 µs  |
+
+#### Comparison (SQLite vs In-Memory)
+
+| benchmark                          | In-Memory (avg) | SQLite (avg) | Δ (slower by) |
+| ---------------------------------- | --------------- | ------------ | ------------- |
+| GET / (Redirect)                   | 1.5 µs          | 1.5 µs       | ~0%           |
+| GET /page (HTML rendering)         | 15.4 µs         | 25.7 µs      | +67%          |
+| GET /todos/ (List todos)           | 1.8 µs          | 5.7 µs       | +217%         |
+| GET /todos/1 (Get a specific todo) | 1.9 µs          | 4.6 µs       | +142%         |
+| POST /todos/ (Create todo)         | 3.9 µs          | 32.0 µs      | +720%         |
+| PATCH /todos/1 (Update todo)       | 3.9 µs          | 11.1 µs      | +185%         |
+| DELETE /todos/2 (Delete todo)      | 2.9 µs          | 50.3 µs      | +1,634%       |
